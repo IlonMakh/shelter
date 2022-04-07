@@ -27,6 +27,28 @@ a {
 
 }
 
+.empty-button {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 22.1px;
+    letter-spacing: 1px;
+    color: #292929;
+    width: fit-content;
+    padding: 15px 45px;
+    background-color: inherit;
+    border: 2px solid #F1CDB3;
+    border-radius: 100px;
+}
+
+
+.section-title {
+font-size: 35px;
+font-weight: 400;
+line-height: 1.25em;
+letter-spacing: 0.06em;
+color: #545454;
+}
+
 body {
     font-family: Georgia, sans-serif;
     font-size: 15px;
@@ -148,4 +170,128 @@ position: relative;
     margin-bottom: 42px;
 }
 
+/*--------------------------------------------------------*/
+
+.about {
+    padding: 80px 0 100px;
+}
+
+.about__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    gap: 120px;
+}
+
+.about__info {
+    width: 430px;
+    margin-top: -5px;
+
+}
+
+.about .section-title {
+    padding-bottom: 25px;
+}
+
+.about__info p {
+font-family: Arial;
+font-weight: 400;
+line-height: 1.6em;
+}
+
+.about__info p:not(:last-child){
+    padding-bottom: 24px;
+}
+
+
+/*-------------------------------------------------------------*/
+
+.our-friends {
+    background-color: #F6F6F6;
+    padding: 75px 0 100px;
+}
+
+.our-friends__wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.our-friends .section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.our-friends__slider {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.our-friends__cards {
+    display: flex;
+    align-items: center;
+    gap: 90px;
+
+    margin-bottom: 60px;
+}
+
+.button-arrow {
+
+    width: 52px;
+    height: 52px;
+
+    border: 2px solid #F1CDB3;
+    border-radius: 100px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+
+    margin-top: -55px;
+}
+
+.arrow-prev {
+    background-image: url(../../assets/icons/Arrow.svg);
+    margin-right: 53px;
+}
+
+.arrow-next {
+    background-image: url(../../assets/icons/Arrow\ \(1\).svg);
+    margin-left: 53px;
+}
+
+.pet-card {
+    background-color: #FAFAFA;
+    padding-bottom: 30px;
+
+    border-radius: 9px;
+    overflow: hidden;
+
+    text-align: center;
+}
+
+
+.pet-card__image {
+    margin-bottom: 30px;
+
+} 
+
+.pet-card__name{
+    margin-bottom: 25px;
+
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    color: #545454;
+
+}
+
+.pet-card__button {
+    margin-left: auto;
+    margin-right: auto;
+}
 
