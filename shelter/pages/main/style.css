@@ -375,3 +375,191 @@ font-weight: 400;
 line-height: 23px;
 letter-spacing: 0.06em;
 }
+
+
+/*--------------------------------------------*/
+
+
+.addition {
+    background-color: #F6F6F6;
+
+    padding: 85px 0 100px;
+}
+
+.addition__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.addition__info {
+    width: 380px;
+}
+
+.addition__info .section-title {
+margin-bottom: 20px;
+}
+
+.addition__info .bank {
+font-weight: 400;
+line-height: 17px;
+letter-spacing: 0.06em;
+color: #545454;
+
+margin-bottom: 20px;
+}
+
+
+.addition__info .account {
+    padding: 10px 0;
+    background-color: #F1CDB3;
+    border-radius: 9px;
+    width: 349px;
+
+
+    margin-bottom: 20px;
+    
+}
+
+.addition__info .account a {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    color: #545454;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.addition__info .account .ico-card {
+    display: block;
+    width: 30px;
+    height: 23px;
+    margin-right: 15px;
+
+
+    background-image: url(../../assets/icons/credit-card.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.addition__info .text {
+    font-family: Arial;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 18px;
+    color: #B2B2B2;
+
+}
+
+/*---------------------------------------------------*/
+
+footer {
+    padding:40px 0 0;
+}
+
+.footer__wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 160px;
+}
+
+.footer__contacts {
+    width: 278px;
+    margin-top: 16px;
+}
+
+.footer__contacts .white-title {
+    margin-bottom: 40px;
+}
+
+.footer__address {
+    width: 302px;
+    margin-top: 16px;
+}
+
+.footer__address .white-title {
+    margin-bottom: 34px;
+}
+
+.footer__text {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0.06em;
+    color: #F1CDB3;
+}
+
+.white-title {
+    color:#FFFFFF;
+    line-height: 45px;
+    letter-spacing: 0.058em;
+    text-align: left;
+
+}
+
+.footer__contacts .email,
+.footer__contacts .phone {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer__contacts .email {
+    margin-bottom: 40px;
+}
+
+.footer__address .address__item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+   
+}
+
+.footer__address .address__item:not(:last-child) {
+    margin-bottom: 32px;  
+}
+
+.footer-ico {
+    display: block;
+
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.footer__contacts .footer-ico {
+    width: 40px;
+    height: 32px;
+}
+
+.footer__address .footer-ico {
+    width: 22px;
+    height: 32px;
+}
+
+.email__ico {
+    background-image: url(../../assets/icons/icon-email.svg);
+}
+
+.phone__ico {
+    background-image: url(../../assets/icons/icon-phone.svg);
+}
+
+.map__ico {
+    background-image: url(../../assets/icons/icon-marker.svg);
+}
+
+
+
+/*
+.footer__image {
+    position: relative;
+    top: 40px;
+}*/
