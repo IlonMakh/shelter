@@ -13,7 +13,7 @@
         <div class="wrapper header__wrapper">
 
             <div class="header__logo">
-                <a href="#">
+                <a href="../main/index.html">
                     <h1 class="logo__title">Cozy house</h1>
                     <p class="logo__subtitle">Shelter for pets in Boston</p>
                 </a>
@@ -21,10 +21,10 @@
 
             <nav class="header__menu">
                 <ul class="menu__list">
-                    <li class="menu__item active-item"><a href="#">About the shelter</a></li>
-                    <li class="menu__item"><a href="#">Our pets</a></li>
-                    <li class="menu__item"><a href="#">Help the shelter</a></li>
-                    <li class="menu__item"><a href="#">Contacts</a></li> 
+                    <li class="menu__item "><a href="../main/index.html">About the shelter</a></li>
+                    <li class="menu__item active-item"><a href="#">Our pets</a></li>
+                    <li class="menu__item"><a href="../main/index.html#help">Help the shelter</a></li>
+                    <li class="menu__item"><a href="../main/index.html#footer">Contacts</a></li> 
                 </ul>
             </nav>
 
@@ -37,7 +37,7 @@
         <section class="our-friends">
             <div class="wrapper our-friends__wrapper">
 
-                <h3 class="section__title">Our friends who
+                <h3 class="section-title">Our friends who <br>
                     are looking for a house</h3>
 
                 <div class="our-friends__cards">
@@ -45,7 +45,7 @@
                     <div class="pet-card">
 
                         <div class="pet-card__image">
-                            <img src="#" alt="Cat Katrine">
+                            <img src="../../assets/images/pets-katrine.png" alt="Cat Katrine">
                         </div>
 
                         <p class="pet-card__name">Katrine</p>
@@ -59,7 +59,7 @@
                     <div class="pet-card">
 
                         <div class="pet-card__image">
-                            <img src="#" alt="Puppy Jennifer">
+                            <img src="../../assets/images/pets-jennifer.png" alt="Puppy Jennifer">
                         </div>
 
                         <p class="pet-card__name">Jennifer</p>
@@ -73,7 +73,7 @@
                     <div class="pet-card">
 
                         <div class="pet-card__image">
-                            <img src="#" alt="Dog Woody">
+                            <img src="../../assets/images/pets-woody.png" alt="Dog Woody">
                         </div>
 
                         <p class="pet-card__name">Woody</p>
@@ -87,7 +87,7 @@
                     <div class="pet-card">
 
                         <div class="pet-card__image">
-                            <img src="#" alt="Dog Sophia">
+                            <img src="../../assets/images/pets-sophia.png" alt="Dog Sophia">
                         </div>
 
                         <p class="pet-card__name">Sophia</p>
@@ -101,7 +101,7 @@
                     <div class="pet-card">
 
                         <div class="pet-card__image">
-                            <img src="#" alt="Cat Timmy">
+                            <img src="../../assets/images/pets-timmy.png" alt="Cat Timmy">
                         </div>
 
                         <p class="pet-card__name">Timmy</p>
@@ -115,7 +115,7 @@
                     <div class="pet-card">
 
                         <div class="pet-card__image">
-                            <img src="#" alt="Dog Charly">
+                            <img src="../../assets/images/pets-charly.png" alt="Dog Charly">
                         </div>
 
                         <p class="pet-card__name">Charly</p>
@@ -129,7 +129,7 @@
                     <div class="pet-card">
 
                         <div class="pet-card__image">
-                            <img src="#" alt="Dog Scarlett">
+                            <img src="../../assets/images/pets-scarlet.png" alt="Dog Scarlett">
                         </div>
 
                         <p class="pet-card__name">Scarlett</p>
@@ -143,7 +143,7 @@
                     <div class="pet-card">
 
                         <div class="pet-card__image">
-                            <img src="#" alt="Cat Freddie">
+                            <img src="../../assets/images/pets-freddie.png" alt="Cat Freddie">
                         </div>
 
                         <p class="pet-card__name">Freddie</p>
@@ -158,11 +158,11 @@
                 </div>
 
                 <div class="our-friends__buttons">
-                    <div class="friends-button start-button">&LT;&LT;</div>
-                    <div class="friends-button prev-button">&LT;</div>
-                    <div class="friends-button page-button">1</div>
-                    <div class="friends-button next-button">&GT;</div>
-                    <div class="friends-button end-button">&GT;&GT;</div>
+                    <button class="friends-button start-button" disabled>&LT;&LT;</button>
+                    <button class="friends-button prev-button" disabled>&LT;</button>
+                    <button class="friends-button page-button">1</button>
+                    <button class="friends-button next-button">&GT;</button>
+                    <button class="friends-button end-button">&GT;&GT;</button>
                 </div>
                 
                 
@@ -171,7 +171,7 @@
 
     </main>
 
-    <footer>
+    <footer id="footer">
         <div class="wrapper footer__wrapper">
 
             <div class="footer__contacts">
@@ -179,14 +179,14 @@
                 <h3 class="section-title white-title">For questions and suggestions</h3>
 
                 <div class="email">
-                    <span class="footer-ico email__ico"></span>
-                    <span class="footer__text">email@shelter.com</span>
+                    <a href="https://e.mail.ru/inbox/" target="_blank"><span class="footer-ico email__ico"></span>
+                    <span class="footer__text">email@shelter.com</span></a>
                 </div>
 
                 <div class="phone">
 
-                    <span class="footer-ico phone__ico"></span>
-                    <span class="footer__text">+13 674 567 75 54</span>
+                    <a href="tel:+136745677554"><span class="footer-ico phone__ico"></span>
+                    <span class="footer__text">+13 674 567 75 54</span></a>
 
                 </div>
 
@@ -198,23 +198,22 @@
 
                 <div class="address__item">
 
-                    <span class="footer-ico map__ico"></span>
-                    <span class="footer__text">1 Central Street, Boston (entrance from the store)</span>
+                    <a href="https://www.google.com/maps/place/%D0%91%D0%BE%D1%81%D1%82%D0%BE%D0%BD,+%D0%9C%D0%B0%D1%81%D1%81%D0%B0%D1%87%D1%83%D1%81%D0%B5%D1%82%D1%81,+%D0%A1%D0%A8%D0%90/@42.3509894,-71.0751581,15z/data=!4m5!3m4!1s0x89e3652d0d3d311b:0x787cbf240162e8a0!8m2!3d42.3600825!4d-71.0588801!5m1!1e1?hl=ru-RU" target="_blank"><span class="footer-ico map__ico"></span>
+                    <span class="footer__text">1 Central Street, Boston <br> (entrance from the store)</span></a>
 
                 </div>
 
                 <div class="address__item">
 
-                    <span class="footer-ico map__ico"></span>
-                    <span class="footer__text">18 South Park, London </span>
+                    <a href="https://www.google.com/maps/place/%D0%9F%D0%B0%D1%80%D1%81%D0%BE%D0%BD%D1%81+%D0%93%D1%80%D0%B8%D0%BD,+%D0%9B%D0%BE%D0%BD%D0%B4%D0%BE%D0%BD,+%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%BE%D0%B1%D1%80%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F/@51.474413,-0.2053892,16z/data=!3m1!4b1!4m5!3m4!1s0x48760f9cf2734937:0x4355402fd17c1261!8m2!3d51.4747689!4d-0.2002723!5m1!1e1?hl=ru-RU" target="_blank"><span class="footer-ico map__ico"></span>
+                    <span class="footer__text">18 South Park, London </span></a>
 
                 </div>
-
 
             </div>
 
             <div class="footer__image">
-                <img src="#" alt="Dog">
+                <img src="../../assets/images/footer-puppy.png" alt="Dog">
             </div>
             
         </div>
