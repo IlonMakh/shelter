@@ -21,9 +21,18 @@ a {
     letter-spacing: 0.07rem;
     color: #292929;
     width: fit-content;
-    padding: 15px 45px;
     background-color: #F1CDB3;
     border-radius: 100px;
+
+}
+
+.orange-button:hover {
+    background-color: #FDDCC4;
+}
+
+.orange-button a {
+    display: block;
+    padding: 15px 45px;
 
 }
 
@@ -34,10 +43,20 @@ a {
     letter-spacing: 0.06rem;
     color: #292929;
     width: fit-content;
-    padding: 15px 45px;
     background-color: inherit;
     border: 2px solid #F1CDB3;
     border-radius: 100px;
+}
+
+.empty-button:hover {
+    background-color: #FDDCC4;
+    border-color: #FDDCC4;
+}
+
+.empty-button a {
+    display: block;
+    padding: 15px 45px;
+
 }
 
 
@@ -56,8 +75,6 @@ body {
 
 .start-screen, footer {
     background-image: url(../../assets/images/noise_transparent@2x.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%);
-
-    height: 100%;
 }
 
 
@@ -169,6 +186,7 @@ position: relative;
     margin-bottom: 40px;
 }
 
+
 /*--------------------------------------------------------*/
 
 .about {
@@ -254,6 +272,12 @@ line-height: 1.6em;
 
 }
 
+.button-arrow:hover {
+    background-color: #FDDCC4;
+    border-color: #FDDCC4;
+    cursor: pointer;
+}
+
 .arrow-prev {
     background-image: url(../../assets/icons/Arrow.svg);
     margin-right: 53px;
@@ -272,6 +296,19 @@ line-height: 1.6em;
     overflow: hidden;
 
     text-align: center;
+}
+
+.pet-card:hover {
+    cursor: pointer;
+}
+
+.pet-card:hover {
+background-color: #FFFFFF;
+}
+
+.pet-card:hover .pet-card__button {
+    background-color: #FDDCC4;
+    border-color: #FDDCC4;
 }
 
 
@@ -415,7 +452,6 @@ margin-bottom: 20px;
 
 
 .addition__info .account {
-    padding: 10px 0;
     background-color: #F1CDB3;
     border-radius: 9px;
     width: 92%;
@@ -431,6 +467,7 @@ margin-bottom: 20px;
     line-height: 1.5rem;
     letter-spacing: 0.09rem;
     color: #545454;
+    padding: 10px 0;
 
     display: flex;
     justify-content: center;
@@ -507,8 +544,8 @@ footer {
 
 }
 
-.footer__contacts .email,
-.footer__contacts .phone {
+.footer__contacts .email a,
+.footer__contacts .phone a {
     display: flex;
     align-items: center;
     gap: 20px;
@@ -518,7 +555,7 @@ footer {
     margin-bottom: 40px;
 }
 
-.footer__address .address__item {
+.footer__address .address__item a {
     display: flex;
     align-items: center;
     justify-content: flex-start;
