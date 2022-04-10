@@ -39,7 +39,7 @@ a {
 .empty-button {
     font-size: 1.1em;
     font-weight: 400;
-    line-height: 1.5rem;
+    line-height: 1.3rem;
     letter-spacing: 0.06rem;
     color: #292929;
     width: fit-content;
@@ -172,7 +172,7 @@ position: relative;
 
 .our-friends .section-title {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 61px;
 }
 
 .our-friends__slider {
@@ -188,10 +188,10 @@ position: relative;
     display: flex;
     align-items: center;
     column-gap: 40px;
-    row-gap: 26px;
+    row-gap: 30px;
     flex-wrap: wrap;
 
-    margin-bottom: 57px;
+    margin-bottom: 58px;
 
 }
 
@@ -263,6 +263,7 @@ position: relative;
 
 .pet-card:hover {
     cursor: pointer;
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 
 .pet-card:hover {
@@ -326,6 +327,7 @@ footer {
 
 .footer__address .white-title {
     margin-bottom: 33px;
+    margin-left: 2px;
 }
 
 .footer__text {

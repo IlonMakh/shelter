@@ -39,7 +39,7 @@ a {
 .empty-button {
     font-size: 1.1em;
     font-weight: 400;
-    line-height: 1.5rem;
+    line-height: 1.3rem;
     letter-spacing: 0.06rem;
     color: #292929;
     width: fit-content;
@@ -141,8 +141,7 @@ cursor: pointer;
 }
 
 
-.active-item a::after,
-.menu__item:hover a::after {
+.active-item a::after{
     display: block;
     position: absolute;
     content: "";
@@ -168,7 +167,7 @@ cursor: pointer;
 .not-only__info {
     width: 38.3%;
 
-    margin-top: -85px;
+    margin-top: -83px;
 }
 
 .not-only__title {
@@ -252,7 +251,7 @@ line-height: 1.6em;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 55px;
+    margin-bottom: 57px;
 }
 
 .our-friends__cards {
@@ -303,6 +302,7 @@ line-height: 1.6em;
 
 .pet-card:hover {
     cursor: pointer;
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 
 .pet-card:hover {
@@ -316,7 +316,7 @@ background-color: #FFFFFF;
 
 
 .pet-card__image {
-    margin-bottom: 30px;
+    margin-bottom: 33px;
 
 } 
 
@@ -529,6 +529,7 @@ footer {
 
 .footer__address .white-title {
     margin-bottom: 33px;
+    margin-left: 2px;
 }
 
 .footer__text {
