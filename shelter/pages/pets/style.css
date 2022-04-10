@@ -142,8 +142,7 @@ position: relative;
 }
 
 
-.active-item a::after,
-.menu__item:hover a::after {
+.active-item a::after {
     display: block;
     position: absolute;
     content: "";
