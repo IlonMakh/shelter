@@ -1,3 +1,13 @@
+@font-face {
+    font-family: Arial; 
+    src: url(../../assets/fonts/arial-regular.ttf); 
+   }
+
+@font-face {
+    font-family: Georgia; 
+    src: url(../../assets/fonts/georgia-regular.ttf); 
+   }
+
 * {
     margin: 0;
     padding: 0;
@@ -328,15 +338,13 @@ position: relative;
 .page-button {
     background-color: #F1CDB3;
     border-color: #F1CDB3;
-}
-
-.page-button:hover {
-    background-color: #FDDCC4;
-    border-color: #FDDCC4;
+    cursor: default;
 }
 
 
-.friends-button:hover {
+
+.next-button:hover,
+.end-button:hover {
     background-color: #FDDCC4;
     border-color: #FDDCC4;
 }

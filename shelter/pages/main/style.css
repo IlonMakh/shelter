@@ -1,3 +1,13 @@
+@font-face {
+    font-family: Arial; 
+    src: url(../../assets/fonts/arial-regular.ttf); 
+   }
+
+@font-face {
+    font-family: Georgia; 
+    src: url(../../assets/fonts/georgia-regular.ttf); 
+   }
+
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +28,7 @@ a {
     font-size: 1.1em;
     font-weight: 400;
     line-height: 1.5rem;
-    letter-spacing: 0.07rem;
+    letter-spacing: 0.06rem;
     color: #292929;
     width: fit-content;
     background-color: #F1CDB3;
@@ -600,6 +610,11 @@ background-color: #FFFFFF;
         column-gap: 80px;
 
         margin-bottom: 42px;
+    }
+
+    .our-friends__cards {
+        width: 100%;
+        justify-content: center;
     }
 }
 
