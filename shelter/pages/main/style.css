@@ -281,6 +281,7 @@ line-height: 1.6em;
         flex-direction: column-reverse;
         gap: 80px;
         justify-content: center;
+        align-items: center;
     }
 
     .about__info {
@@ -411,7 +412,7 @@ background-color: #FFFFFF;
 @media  screen and (min-width:768px) and (max-width:1279px) {
     
     .our-friends__cards {
-        gap: 40px;
+        gap: 5.2vw;
     }
     
     .pet-card:last-child {
@@ -556,7 +557,7 @@ margin-bottom: 20px;
 .addition__info .account {
     background-color: #F1CDB3;
     border-radius: 9px;
-    width: 92%;
+    width: 349px;
 
 
     margin-bottom: 20px;
@@ -589,6 +590,10 @@ margin-bottom: 20px;
     background-repeat: no-repeat;
 }
 
+.addition__info .account__number {
+    display: block;
+}
+
 .addition__info .text {
     font-family: Arial;
     font-size: 0.8em;
@@ -601,7 +606,7 @@ margin-bottom: 20px;
 
 @media  screen and (min-width:768px) and (max-width:1279px) {
     .addition{
-        padding: 80px 0 95px;
+        padding: 80px 0 100px;
     }
 
     .addition__wrapper {
@@ -618,9 +623,9 @@ margin-bottom: 20px;
         width: 71%;
     }
 
-    .about__image img {
-        width: 100%;
+    .addition__image img {
         display: block;
+        width: 100%;
         margin: 0 auto;
     }
 }
@@ -639,7 +644,7 @@ footer {
 }
 
 .footer__contacts {
-    width: 23.1%;
+    width: 278px;
     margin-top: 16px;
 }
 
@@ -648,7 +653,7 @@ footer {
 }
 
 .footer__address {
-    width: 25.1%;
+    width: 302px;
     margin-top: 16px;
 }
 
@@ -739,32 +744,35 @@ footer {
 
     .footer__wrapper {
         flex-wrap: wrap;
-        column-gap: 55px;
+        column-gap: 7vw;
         row-gap: 65px;
         align-items: center;
         justify-content: center;
     }
 
     .footer__contacts {
-        width: 40%;
+        width: 278px;
         margin-top: 0;
     
     }
 
     .footer__address {
-        width: 42%;
+        width: 302px;
         margin-top: 0;
-    
     
     }
 
     .footer__address .white-title {
-        margin-left: 0;
+        margin-left: 2px;
     }
 
     .footer__image {
         width: 42%;
+
     }
 
-
+    .footer__image img {
+        display: block;
+        margin: 0 auto;
+    }
 }
