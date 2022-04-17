@@ -402,6 +402,7 @@ background-color: #FFFFFF;
         padding-bottom: 75px;
     }
     .our-friends__cards {
+        width:580px;
         column-gap: 5.2vw;
         margin-bottom: 40px;
     }
@@ -420,6 +421,10 @@ background-color: #FFFFFF;
 @media  screen and (max-width:767px) {
     .our-friends {
         padding: 42px 0;
+    }
+    
+        .our-friends__cards {
+        width:270px;
     }
 
     .our-friends .section-title {
