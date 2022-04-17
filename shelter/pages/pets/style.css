@@ -403,7 +403,7 @@ background-color: #FFFFFF;
     }
     .our-friends__cards {
         width:580px;
-        column-gap: 5.2vw;
+        column-gap: 40px;
         margin-bottom: 40px;
     }
 
