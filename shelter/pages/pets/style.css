@@ -91,6 +91,10 @@ body {
 }
 
 @media  screen and (max-width:767px) {
+    .not-scroll {
+        overflow-y: hidden;
+    }
+    
     .wrapper {
         max-width: calc(100% - 20px);
         margin: 0 auto;
@@ -98,6 +102,22 @@ body {
 
     .section-title {
         font-size: 25px;
+    }
+
+    .overlay {
+        position:fixed;
+        top: 0;
+        left: 0;
+        width:100%;
+        height:100%;
+
+        transition: 0.5s;
+
+    }
+
+    .dark-overlay {
+        background: rgba(41, 41, 41, 0.6);
+        transition: 0.5s;
     }
 
 
@@ -189,12 +209,23 @@ position: relative;
 
 @media  screen and (max-width:767px) {
    
+    header {
+    transition: 2s;
+    }
+
+    .inherit-header {
+        background-color: inherit;
+        transition: 0s;
+    }
+
     .header__burger {
         display: block;
         position: relative;
         width: 30px;
         height: 22px;
         margin-right: 43px;
+        transition: 0.5s;
+        z-index: 5;
     }
 
     .header__burger span {
@@ -215,7 +246,6 @@ position: relative;
         width: 100%;
         height: 2px;
         left: 0;
-        z-index: 5;
     }
 
     .header__burger::before {
@@ -226,22 +256,42 @@ position: relative;
         bottom: 0;
     }
 
+    .active span,
+    .active::before,
+    .active::after {
+        background-color: #F1CDB3;
+        transition: 0.5s;
+    }
+
+    .active {
+        transform: rotate(90deg);
+        transition: transform 0.5s;
+
+        z-index: 5;
+    }
+
     .header__menu {
-        display: none;
         position: fixed;
         top: 0;
         right: 0;
-        width: 100%;
+        width: 320px;
         height: 100%;
         background-color: #292929;
+        transform: translateX(320px);
+	    transition: transform 0.5s; 
+    }
+
+    .open {
+        transform: translateX(0);
+        transition: transform 0.5s;
     }
 
     .menu__list {
         flex-direction: column;
         align-items: center;
         position: absolute;
-        top: calc(50% - 327px/2);
-        left: calc(50% - 243px/2);
+        top: calc(50vh - 282px/2);
+        left: calc(50% - 276px/2);
 
     }
 
@@ -251,8 +301,39 @@ position: relative;
     }
 
     .menu__item a {
+        color: #CDCDCD;
+    }
+
+    .active-item a,
+    .menu__item:hover a {
+        color: #FAFAFA;
+    }
+
+    .menu__item a {
         font-size: 2rem;
     }
+
+    .header__logo {
+        transition: 0.5s;
+        z-index: 5;
+    }
+
+    .logo-menu {
+        transform: translateX(calc(100vw - 320px));
+        transition: 0.5s;
+       
+    }
+
+    .logo-menu .logo__title {
+        color: #F1CDB3;
+        transition: 0.5s;
+    }
+
+    .logo-menu .logo__subtitle {
+        color: #FFFF;
+        transition: 00.5s;
+    }
+
 }
 
 
