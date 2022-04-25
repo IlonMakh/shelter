@@ -31,20 +31,7 @@ for (let i = 0; i <= menuItems.length; i++) {
     menuItems[i].addEventListener('click', closeBurger);
 }
 
-/*-------------------------------------------slider--------------------------------------------------*/
 
-
-let prevSliderButton = document.body.querySelector('.arrow-prev');
-let nextSliderButton = document.body.querySelector('.arrow-next');
-let ourFriendCards = document.body.querySelector('.our-friends__cards');
-
-prevSliderButton.addEventListener('click', function(){
-
-});
-
-nextSliderButton.addEventListener('click', function(){
-
-});
 
 
 
