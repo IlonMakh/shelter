@@ -104,6 +104,11 @@ let ourFriendCards = document.body.querySelector('.our-friends__cards');
 let itemLeft = document.querySelector('.left-item');
 let itemRight = document.querySelector('.right-item');
 let itemCenter = document.querySelector('.center-item');
+let popupWrapper = document.querySelector('.popup__wrapper');
+let overlay = document.body.querySelector('.overlay');
+var petCards = document.querySelectorAll('.pet-card');
+let closePopupIcon;
+var changedItem;
 
     let petsNumbers = {};
     let getPetsNumbers = function() {
@@ -114,6 +119,7 @@ let itemCenter = document.querySelector('.center-item');
     }
   
     petsNumbers = getPetsNumbers();
+
 
 
 let createCardTemplate = function(index) {
@@ -128,7 +134,6 @@ let createCardTemplate = function(index) {
     cardImageWrapper.classList.add('pet-card__image');
     cardName.classList.add('pet-card__name');
     cardButton.classList.add('pet-card__button', 'empty-button');
-    cardButtonLink.setAttribute('href', "#");
 
     cardImage.src = petsInfo[index].img;
     cardName.innerHTML = `${petsInfo[index].name}`;
@@ -139,6 +144,7 @@ let createCardTemplate = function(index) {
     card.append(cardName);
     card.append(cardButton);
     cardButton.append(cardButtonLink);
+   
 
     return card;
 }
@@ -171,9 +177,12 @@ for (let j = 0; j < 3; j++) {
     let random = getRandomIndex(0, (petsInfo.length - 1), excludedCards);
     itemName.appendChild(createCardTemplate(random));
     excludedCards.push(random);
+   }
+   return changedItem = itemCenter;
 }
 
-}
+createItem(itemCenter);
+
 
 let moveLeft = function() {
    createItem(itemLeft);
@@ -194,34 +203,36 @@ rightSliderButton.addEventListener('click', moveRight);
 
 ourFriendCards.addEventListener('animationend', function(animationEvent){
 
-    let changedItem;
 
     if (animationEvent.animationName === "move-left") {
         ourFriendCards.classList.remove('transition-left');
         let leftItems = document.querySelector('.left-item').innerHTML;
-        changedItem = itemLeft;
         document.querySelector('.center-item').innerHTML = leftItems;
     } 
 
     else {
         ourFriendCards.classList.remove('transition-right');
         let rightItems = document.querySelector('.right-item').innerHTML;
-        changedItem = itemRight;
         document.querySelector('.center-item').innerHTML = rightItems;
     }
 
     leftSliderButton.addEventListener('click', moveLeft);
     rightSliderButton.addEventListener('click', moveRight);
+
 })
 
 
 /*-------------------------------------------popup-------------------------------------------- */
 
-let popupWrapper = document.querySelector('.popup__wrapper');
-let overlay = document.body.querySelector('.overlay');
-/*
-let openPopup = function(event) {
-   let index = event.target.dataset.index;
+
+let openPopup = function(petCard) {
+
+   popupWrapper.classList.toggle('active-popup');
+   document.body.classList.toggle('not-scroll');
+   overlay.classList.toggle('dark-overlay');
+
+   let petName = petCard.querySelector('.pet-card__name').innerText;
+   let index = petsNumbers[petName];
    
    popupWrapper.innerHTML = `
    <div class="popup">
@@ -251,21 +262,57 @@ let openPopup = function(event) {
 
    `;
 
-   popupWrapper.classList.add('active-popup');
-   document.body.classList.add('not-scroll');
-   overlay.classList.add('dark-overlay');
+   closePopupIcon = popupWrapper.querySelector('.popup__close');
+   closePopupIcon.addEventListener('click', closePopup);
+
+   overlay.addEventListener('click', closePopup);
+   overlay.addEventListener('mouseover', function() {
+      closePopupIcon.style.backgroundColor = "#F1CDB3";
+   })
+   overlay.addEventListener('mouseout', function() {
+      closePopupIcon.style.backgroundColor = "transparent";
+   })
+   closePopupIcon.addEventListener('mouseover', function() {
+      closePopupIcon.style.backgroundColor = "#F1CDB3";
+   })
+   closePopupIcon.addEventListener('mouseout', function() {
+      closePopupIcon.style.backgroundColor = "transparent";
+   })
 }
 
 let closePopup = function() {
+   popupWrapper.innerHTML = '';
    popupWrapper.classList.remove('active-popup');
    document.body.classList.remove('not-scroll');
    overlay.classList.remove('dark-overlay');
 }
 
-let closePopupIcon = document.querySelector('.popup__close');
-closePopupIcon.addEventListener('click', closePopup());
+petCards.forEach(card => {
+   card.addEventListener('click', (elem) => {
+      if (elem.target === card) {
+         openPopup(elem.target);
+      }
 
-*/
+      else {
+         openPopup(elem.target.closest('.pet-card'));
+      }
+   })
+})
+
+ourFriendCards.addEventListener('click', (elem) => {
+   if (elem.target.matches('.pet-card')) {
+      openPopup(elem.target);
+   }
+
+   else if (elem.target.matches('.item')) return;
+
+   else  {
+      openPopup(elem.target.closest('.pet-card'));
+   }
+   
+})
+
+
 
 
 
