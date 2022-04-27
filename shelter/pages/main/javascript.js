@@ -339,12 +339,8 @@ let closeBurger = function() {
 }
 overlay.addEventListener('click', closeBurger);
 
-let nodeList = document.body.querySelectorAll('.menu__item'),
-    menuItems = Array.from(nodeList);
-
-for (let i = 0; i <= menuItems.length; i++) {
-    menuItems[i].addEventListener('click', closeBurger);
-}
+let menuList = document.body.querySelector('.menu__list');
+    menuList.addEventListener('click', closeBurger);
 
 
 

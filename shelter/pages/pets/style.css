@@ -407,7 +407,7 @@ position: relative;
 
 }
 
-.friends-button:disabled{
+ .friends-button:disabled{
     border-color: #CDCDCD;
     color: #CDCDCD;
     cursor: not-allowed;
@@ -418,20 +418,18 @@ position: relative;
     border-color: inherit;
 }
 
-.page-button {
-    background-color: #F1CDB3;
-    border-color: #F1CDB3;
-    cursor: default;
-}
 
-
-
-.next-button:hover,
-.end-button:hover {
+.friends-button:hover {
     background-color: #FDDCC4;
     border-color: #FDDCC4;
 }
 
+.page-button,
+.page-button:hover {
+    background-color: #F1CDB3;
+    border-color: #F1CDB3;
+    cursor: default;
+}
 
 .pet-card {
     background-color: #FAFAFA;
@@ -490,12 +488,6 @@ background-color: #FFFFFF;
         margin-bottom: 40px;
     }
 
-
-    .pet-card:nth-child(7),
-    .pet-card:last-child {
-      display: none;
-  }
-
   .our-friends .section-title {
     margin-bottom: 30px;
 }
@@ -514,9 +506,6 @@ background-color: #FFFFFF;
         margin-bottom: 45px;
     }
    
-    .pet-card:nth-child(1n+4) {
-        display: none;
-    }
 
     .our-friends__cards {
         margin-bottom: 42px;

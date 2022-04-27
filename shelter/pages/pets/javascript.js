@@ -105,14 +105,51 @@ let petsInfo = [
 
  petsNumbers = getPetsNumbers();
 
- /*---------------------------------popup------------------------------------ */
-
-let ourFriendCards = document.body.querySelector('.our-friends__cards');
-let popupWrapper = document.querySelector('.popup__wrapper');
+ 
+ let ourFriendCards = document.body.querySelector('.our-friends__cards');
+ let toStartButton = document.querySelector('.start-button');
+ let prevPageButton = document.querySelector('.prev-button');
+ let currentPageButton = document.querySelector('.page-button');
+ let toEndButton = document.querySelector('.end-button');
+ let nextPageButton = document.querySelector('.next-button');
+ var petCards = document.querySelectorAll('.pet-card');
+ let pageNumber = 1;
+ let allCardsNumber = 48;
+ var numberOfCards;
+ let popupWrapper = document.querySelector('.popup__wrapper');
 let overlay = document.body.querySelector('.overlay');
-var petCards = document.querySelectorAll('.pet-card');
 let closePopupIcon;
 let header = document.querySelector('header');
+let burger = document.body.querySelector('.header__burger');
+let menu = document.body.querySelector('.header__menu');
+let logo = document.body.querySelector('.header__logo');
+
+//////burger
+
+burger.addEventListener('click', function(){
+	menu.classList.toggle('open');
+    burger.classList.toggle('active');
+    overlay.classList.toggle('dark-overlay');
+    logo.classList.toggle('logo-menu');
+    document.body.classList.toggle('not-scroll');
+    header.classList.toggle('inherit-header');
+});
+
+let closeBurger = function() {
+    menu.classList.remove('open');
+    burger.classList.remove('active');
+    overlay.classList.remove('dark-overlay');
+    document.body.classList.remove('not-scroll');
+    logo.classList.remove('logo-menu');
+    header.classList.remove('inherit-header');
+}
+
+overlay.addEventListener('click', closeBurger);
+
+let menuList = document.body.querySelector('.menu__list');
+    menuList.addEventListener('click', closeBurger);
+
+ /*---------------------------------popup------------------------------------ */
 
 let openPopup = function(petCard) {
 
@@ -151,7 +188,8 @@ let openPopup = function(petCard) {
           </div>
  
     `;
- 
+
+
     closePopupIcon = popupWrapper.querySelector('.popup__close');
     closePopupIcon.addEventListener('click', closePopup);
  
@@ -191,40 +229,155 @@ let openPopup = function(petCard) {
        openPopup(elem.target.closest('.pet-card'));
     }
     
- })
+ });
 
+/*--------------Pagination------------------- */
 
+let arrayOfIndexes = [[0,1,2,3,4,5,6,7], [0,1,2,3,4,5,6,7], [0,1,2,3,4,5,6,7], [0,1,2,3,4,5,6,7], [0,1,2,3,4,5,6,7], [0,1,2,3,4,5,6,7]];
 
-//////burger
-let burger = document.body.querySelector('.header__burger');
-let menu = document.body.querySelector('.header__menu');
-let logo = document.body.querySelector('.header__logo');
-burger.addEventListener('click', function(){
-	menu.classList.toggle('open');
-    burger.classList.toggle('active');
-    overlay.classList.toggle('dark-overlay');
-    logo.classList.toggle('logo-menu');
-    document.body.classList.toggle('not-scroll');
-    header.classList.toggle('inherit-header');
-});
-
-let closeBurger = function() {
-    menu.classList.remove('open');
-    burger.classList.remove('active');
-    overlay.classList.remove('dark-overlay');
-    document.body.classList.remove('not-scroll');
-    logo.classList.remove('logo-menu');
-    header.classList.remove('inherit-header');
+let shuffleArray = function(array) {
+   for (let i = array.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
 }
 
-overlay.addEventListener('click', closeBurger);
+arrayOfIndexes.map(shuffleArray);
 
-let nodeList = document.body.querySelectorAll('.menu__item'),
-    menuItems = Array.from(nodeList);
+console.log(arrayOfIndexes);
+let commonArray = [].concat.apply([], arrayOfIndexes);
 
-for (let i = 0; i <= menuItems.length; i++) {
-    menuItems[i].addEventListener('click', closeBurger);
+console.log(commonArray);
+
+
+if (window.innerWidth >= 1280) {
+   numberOfCards = 8;
 }
+else if (window.innerWidth < 1280 && window.innerWidth >= 768) {
+   numberOfCards = 6;
+}
+else if (window.innerWidth < 768) {
+  numberOfCards = 3;
+}
+
+
+let maxPageNumber = allCardsNumber/numberOfCards;
+
+let createCardTemplate = function(index) {
+   let card = document.createElement('div');
+   let cardImageWrapper = document.createElement('div');
+   let cardImage = document.createElement('img');
+   let cardName = document.createElement('p');
+   let cardButton = document.createElement('div');
+   let cardButtonLink = document.createElement('a');
+   
+   card.classList.add('pet-card');
+   cardImageWrapper.classList.add('pet-card__image');
+   cardName.classList.add('pet-card__name');
+   cardButton.classList.add('pet-card__button', 'empty-button');
+
+   cardImage.src = petsInfo[index].img;
+   cardName.innerHTML = `${petsInfo[index].name}`;
+   cardButtonLink.innerHTML = "Learn more";
+
+   card.append(cardImageWrapper);
+   cardImageWrapper.append(cardImage);
+   card.append(cardName);
+   card.append(cardButton);
+   cardButton.append(cardButtonLink);
+  
+
+   return card;
+}
+
+let cardsPerPages = function(array) {
+for (let i = 0; i <= array.length; i++) {
+   let startSlice = (pageNumber - 1) * numberOfCards;
+   let endSlice = startSlice + numberOfCards;
+
+   let indexesOfCards = array.slice(startSlice, endSlice);
+   for (let j = 0; j <= indexesOfCards.length; j++) {
+      ourFriendCards.append(createCardTemplate(indexesOfCards[j]));
+   }
+}
+}
+
+
+
+let pagePlus = function() {
+   if (pageNumber === maxPageNumber) return;
+   else {
+   pageNumber++;
+   updatePage();
+}
+}
+
+let pageMinus = function() {
+   if (pageNumber === 1) return;
+   else {
+   pageNumber--;
+   updatePage()
+};
+}
+
+let toStartPage = function() {
+   if (pageNumber === 1) return;
+   else {
+   pageNumber = 1;
+   updatePage();
+}
+}
+
+let toEndPage = function() {
+   if (pageNumber === maxPageNumber) return;
+   else {
+   pageNumber = maxPageNumber;
+   updatePage();
+}
+}
+let updatePage = function() {
+   if (pageNumber === 1) {
+      toStartButton.disabled = true;
+      toStartButton.removeEventListener('click', toStartPage);
+      prevPageButton.disabled = true;
+      prevPageButton.removeEventListener('click', pageMinus);
+      nextPageButton.disabled = false;
+      nextPageButton.addEventListener('click', pagePlus)
+      toEndButton.disabled = false;
+      toEndButton.addEventListener('click', toEndPage);
+   }
+
+   else if (pageNumber > 1 && pageNumber < maxPageNumber) {
+      toStartButton.disabled = false;
+      toStartButton.addEventListener('click', toStartPage);
+      prevPageButton.disabled = false;
+      prevPageButton.addEventListener('click', pageMinus);
+      nextPageButton.disabled = false;
+      nextPageButton.addEventListener('click', pagePlus)
+      toEndButton.disabled = false;
+      toEndButton.addEventListener('click', toEndPage);
+   }
+
+   else if (pageNumber === maxPageNumber) {
+      toStartButton.disabled = false;
+      toStartButton.addEventListener('click', toStartPage);
+      prevPageButton.disabled = false;
+      prevPageButton.addEventListener('click', pageMinus);
+      nextPageButton.disabled = true;
+      nextPageButton.removeEventListener('click', pagePlus)
+      toEndButton.disabled = true;
+      toEndButton.removeEventListener('click', toEndPage);
+   }
+   currentPageButton.innerHTML = pageNumber;
+   ourFriendCards.innerHTML = '';
+   cardsPerPages(commonArray);
+}
+
+updatePage();
+
+
+
 
 
 
