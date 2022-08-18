@@ -1,2 +1,1 @@
-# ilonmakh-JSFE2022Q1
-Private repository for @ilonmakh
+https://rolling-scopes-school.github.io/ilonmakh-JSFE2022Q1/shelter/pages/main/index.html
